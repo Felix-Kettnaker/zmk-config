@@ -1,0 +1,37 @@
+// Copyright 2024 Santosh Kumar (@santosh)
+// SPDX-License-Identifier: GPL-2.0-or-later
+
+#pragma once
+
+// #define TRI_LAYER_LOWER_LAYER 1
+// #define TRI_LAYER_UPPER_LAYER 2
+// #define TRI_LAYER_ADJUST_LAYER 3
+// #define COMBO_TERM 50
+// #define COMBO_ONLY_FROM_LAYER 0
+#define PERMISSIVE_HOLD
+// #define PERMISSIVE_HOLD_PER_KEY
+// #define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
+// #define HOLD_ON_OTHER_KEY_PRESS
+#define QUICK_TAP_TERM 0
+#define TAPPING_TERM 225
+
+#define UNICODE_SELECTED_MODES UNICODE_MODE_WINCOMPOSE
+
+//#define ENCODERS_PAD_A { encoder1a, encoder2a } //      colckwise: left knob, right knob
+//#define ENCODERS_PAD_B { encoder1b, encoder2b } // anti-colckwise: left knob, right knob
+//#define ENCODER_RESOLUTION 4
+
+/*
+#define MK_KINETIC_SPEED
+#define MOUSEKEY_DELAY 5
+#define MOUSEKEY_INTERVAL 10
+#define MOUSEKEY_MOVE_DELTA 16
+#define MOUSEKEY_INITIAL_SPEED 100
+#define MOUSEKEY_BASE_SPEED 5000
+#define MOUSEKEY_DECELERATED_SPEED 400
+#define MOUSEKEY_ACCELERATED_SPEED 3000
+#define MOUSEKEY_WHEEL_INITIAL_MOVEMENTS 16
+#define MOUSEKEY_WHEEL_BASE_MOVEMENTS 32
+#define MOUSEKEY_WHEEL_ACCELERATED_MOVEMENTS 48
+#define MOUSEKEY_WHEEL_DECELERATED_MOVEMENTS 8
+*/
