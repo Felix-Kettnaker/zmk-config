@@ -41,7 +41,11 @@
   };
 
   macros {
-    rep = &key_repeat;
+    rep: rep {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>; 
+      bindings = <&macro_press &key_repeat>;
+    };
     // hold-tap
 
 
