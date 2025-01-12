@@ -51,42 +51,42 @@
     shft_S: left_shift_S {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&ht LSHFT S>;
+      bindings = <&macro_tap &ht LSHFT S>;
     };
     shft_A: right_shift_A {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&ht RSHFT A>;
+      bindings = <&macro_tap &ht RSHFT A>;
     };
     cmd_spc: left_cmd_space {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&ht LCMD SPACE>;
+      bindings = <&macro_tap &ht LCMD SPACE>;
     };
     cmd_ret: right_cmd_return {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&ht RCMD RET>;
+      bindings = <&macro_tap &ht RCMD RET>;
     };
     ctrl_z: left_ctrl_z {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&ht LCTRL DE_Z>;
+      bindings = <&macro_tap &ht LCTRL DE_Z>;
     };
     ctrl_com: right_ctrl_com {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&ht RCTRL DE_COMM>;
+      bindings = <&macro_tap &ht RCTRL DE_COMM>;
     };
     opt_bspc: left_opt_bspc {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&ht LALT BSPC>;
+      bindings = <&macro_tap &ht LALT BSPC>;
     };
     opt_dot: right_opt_dot {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings = <&ht RALT DE_DOT>;
+      bindings = <&macro_tap &ht RALT DE_DOT>;
     };
 
 
@@ -126,7 +126,7 @@
   keymap {
     compatible = "zmk,keymap";
 
-    /* TEMPLATE .--------------------.                         |                         .--------------------.
+/* TEMPLATE     .--------------------.                         |                         .--------------------.
 * ,-------------|  F3  |  F4  |  F5  |                         |                         |  F6  |  F7  |  F8  |-------------.
 * |  F1  |  F2  |------|------|------|------.                  |                  .------|------|------|------|  F9  |  F10 |
 * |------|------|      |      |      |      |                  |                  |      |      |      |      |------|------|
