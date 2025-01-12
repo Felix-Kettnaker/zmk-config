@@ -41,12 +41,53 @@
   };
 
   macros {
-    rep: rep {
+    rept: rept {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>; 
-      bindings = <&macro_press &key_repeat>;
+      bindings = <&macro_tap &key_repeat>;
     };
+
     // hold-tap
+    shft_S: left_shift_S {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&ht LSHFT S>;
+    };
+    shft_A: right_shift_A {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&ht RSHFT A>;
+    };
+    cmd_spc: left_cmd_space {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&ht LCMD SPACE>;
+    };
+    cmd_ret: right_cmd_return {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&ht RCMD RET>;
+    };
+    ctrl_z: left_ctrl_z {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&ht LCTRL DE_Z>;
+    };
+    ctrl_com: right_ctrl_com {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&ht RCTRL DE_COMM>;
+    };
+    opt_bspc: left_opt_bspc {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&ht LALT BSPC>;
+    };
+    opt_dot: right_opt_dot {
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&ht RALT DE_DOT>;
+    };
 
 
     bt_0: bt_profile_macro_0 {
@@ -93,25 +134,25 @@
 * |------|------|   M  |   L  |   C  |   K  |                  |                  |   X  |   F  |   O  |   U  |------|------|
 * |      |   V  |------|------|------|------|                  |                  |------|------|------|------|   Q  |      |
 * |------|------|   T  |   R  |   D  |   Y  |                  |                  |   B  |   N  |   E  |   I  |------|------|
-* |Repeat| ⇧ S  |------|------|------|------|                  |                  |------|------|------|------| ⇧ A  |Repeat|
+* |Repeat|  ⇧S  |------|------|------|------|                  |                  |------|------|------|------|  ⇧A  |Repeat|
 * |------|------|AltRep|   W  |   G  |   J  |                  |                  |   P  |   H  |   -  |AltRep|------|------|
-* |  ESC |   Z  |------|------|-------------'                  |                  '------|------|------|------|   ,  |      |
+* |  ESC |  ⌃Z  |------|------|-------------'                  |                  '------|------|------|------|  ⌃,  |      |
 * |------|------|      |      |      |   .------.              |              .------.   |      |   +  |   /  |------|------|
-* |      |      |--------------------'   |  -⇥  |------.       |       .------|      |   '--------------------|      |      |
+* |      |      |--------------------'   |  -⇥  |------.       |       .------|   '  |   '--------------------|      |      |
 * '-------------'                        |------|   ⌦  |------.|.------|      |------|                        '-------------'
-*                                        | Space|------|      |||      |------|   ⏎  |
-*                                        '------|   ⌫  |------|||------|   .  |------'
+*                                        |⌘Space|------|      |||      |------|  ⌘⏎  |
+*                                        '------|  ⌥⌫  |------|||------|  ⌥.  |------'
 *                                               '------|      |||      |------'
 *                                                      '------'|'------'                                                   */
 
     default_layer {
       bindings = <
-        &kp F1     &kp F2    &kp F3  &kp F4   &kp F5                                                                                  &kp F6  &kp F7    &kp F8   &kp F9   &kp F10
-        &kp EQUAL  &kp N1    &kp N2  &kp N3   &kp N4    &kp N5                                                               &kp N6   &kp N7  &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB    &kp V     &kp M   &kp L    &kp C     &kp K                                                                &kp DE_X &kp F   &kp O     &kp U    &kp Q    &kp BSLH
-        &rep      &ht LSHFT S &kp T  &kp R    &kp D     &kp DE_Y                                                             &kp B    &kp N   &kp E     &kp I  &ht RSHIFT A &key_repeat
-      &ht LCTRL ESC &kp DE_Z  &none  &kp W    &kp G     &kp J   &kp TAB   &kp DEL   &layer_td  &kp LGUI &kp RCTRL  &kp RSHFT  &kp P   &kp H   &kp COMMA &kp DOT  &kp FSLH &ht RCTRL PG_UP
-        &mo MAGIC  &kp HOME  &kp END &kp LEFT &kp RIGHT     &ht LCMD SPACE &kp BSPC  &kp MDE_AT &kp RALT &kp DE_DOT &ht RCMD RET      &kp UP  &kp DOWN  &kp LBKT &kp RBKT &kp PG_DN
+        &kp F1    &kp F2   &kp F3  &kp F4   &kp F5                                                                                  &kp F6  &kp F7    &kp F8   &kp F9   &kp F10
+        &kp EQUAL &kp N1   &kp N2  &kp N3   &kp N4    &kp N5                                                               &kp N6   &kp N7  &kp N8    &kp N9   &kp N0   &kp MINUS
+        &kp TAB   &kp V    &kp M   &kp L    &kp C     &kp K                                                                &kp DE_X &kp F   &kp O     &kp U    &kp Q    &kp BSLH
+        &rept     &shft_S  &kp T   &kp R    &kp D     &kp DE_Y                                                             &kp B    &kp N   &kp E     &kp I    &shft_A  &rept
+        &kp ESC   &ctrl_z  &none   &kp W    &kp G     &kp J   &kp TAB   &kp DEL   &layer_td  &kp LGUI &kp RCTRL &kp DE_SQT &kp P    &kp H   &kp COMMA &kp DOT  &ctrl_com &ht PG_UP
+        &mo MAGIC &kp HOME &kp END &kp LEFT &kp RIGHT         &cmd_spc  &opt_bspc &kp MDE_AT &kp RALT &opt_dot   &cmd_ret  &kp UP   &kp DOWN &kp LBKT &kp RBKT &kp PG_DN
       >;
     };
 
