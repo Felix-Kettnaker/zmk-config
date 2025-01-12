@@ -48,7 +48,6 @@
     };
 
     // hold-tap
-    /*
 shft_S: left_shift_S {
 compatible = "zmk,behavior-macro";
 #binding-cells = <0>;
@@ -69,6 +68,7 @@ compatible = "zmk,behavior-macro";
 #binding-cells = <0>;
 bindings = <&macro_tap &ht RCMD RET>;
 };
+    /*
 ctrl_z: left_ctrl_z {
 compatible = "zmk,behavior-macro";
 #binding-cells = <0>;
