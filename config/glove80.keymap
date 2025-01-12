@@ -41,7 +41,7 @@
   };
 
   macros {
-    rep = key_repeat;
+    rep = &key_repeat;
     // hold-tap
 
 
