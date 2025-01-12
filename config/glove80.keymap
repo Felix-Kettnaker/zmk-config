@@ -19,6 +19,17 @@
 
 / {
   behaviors {
+    // hold-tab
+    ht: hold_tap {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping_term = <125>; // how long before tap becomes hold
+      quick-tap-ms = <150>; // double tapping within this time wil always be a tap (also when held)
+      require-prior-idle-ms = <100>; // when another key was pressed before this key, it will always be a tap
+      bindings = <&kp>, <&kp>;
+    };
+
     // For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.
     // Configure it as a tap dance, so the first tap (or hold) is a &mo and the second tap is a &to
     layer_td: tap_dance_0 {
@@ -27,6 +38,13 @@
       tapping-term-ms = <200>;
       bindings = <&mo LOWER>, <&to LOWER>;
     };
+  };
+
+  aliases {
+    repeat = &key_repeat;
+
+    // hold-tap
+    shft_S = &ht LEFT_SHIFT S;
   };
 
   macros {
@@ -66,7 +84,7 @@
   keymap {
     compatible = "zmk,keymap";
 
-    /* TEMPLATE      .--------------------.                         |                         .--------------------.
+    /* TEMPLATE .--------------------.                         |                         .--------------------.
 * ,-------------|  F3  |  F4  |  F5  |                         |                         |  F6  |  F7  |  F8  |-------------.
 * |  F1  |  F2  |------|------|------|------.                  |                  .------|------|------|------|  F9  |  F10 |
 * |------|------|      |      |      |      |                  |                  |      |      |      |      |------|------|
@@ -74,12 +92,12 @@
 * |------|------|   M  |   L  |   C  |   K  |                  |                  |   X  |   F  |   O  |   U  |------|------|
 * |      |   V  |------|------|------|------|                  |                  |------|------|------|------|   Q  |      |
 * |------|------|   T  |   R  |   D  |   Y  |                  |                  |   B  |   N  |   E  |   I  |------|------|
-* |Repeat|   S  |------|------|------|------|                  |                  |------|------|------|------|   A  |Repeat|
+* |Repeat| ⇧ S  |------|------|------|------|                  |                  |------|------|------|------| ⇧ A  |Repeat|
 * |------|------|AltRep|   W  |   G  |   J  |                  |                  |   P  |   H  |   -  |AltRep|------|------|
 * |      |   Z  |------|------|-------------'                  |                  '------|------|------|------|   ,  |      |
 * |------|------|      |      |      |   .------.              |              .------.   |      |   +  |   /  |------|------|
 * |      |      |--------------------'   |  -⇥  |------.       |       .------|      |   '--------------------|      |      |
-* '-------------'                        |------|   ⌦  |------.|.------|      |------|                        '------|------'
+* '-------------'                        |------|   ⌦  |------.|.------|      |------|                        '-------------'
 *                                        | Space|------|      |||      |------|   ⏎  |
 *                                        '------|   ⌫  |------|||------|   .  |------'
 *                                               '------|      |||      |------'
@@ -90,9 +108,9 @@
         &kp F1    &kp F2   &kp F3  &kp F4   &kp F5                                                                                  &kp F6  &kp F7    &kp F8   &kp F9   &kp F10
         &kp EQUAL &kp N1   &kp N2  &kp N3   &kp N4    &kp N5                                                               &kp N6   &kp N7  &kp N8    &kp N9   &kp N0   &kp MINUS
         &kp TAB   &kp V    &kp M   &kp L    &kp C     &kp K                                                                &kp DE_X &kp F   &kp O     &kp U    &kp Q    &kp BSLH
-        &key_repeat &kp S  &kp T   &kp R    &kp D     &kp DE_Y                                                             &kp B    &kp N   &kp E     &kp I    &kp A    &key_repeat
-        &kp GRAVE &kp DE_Z &none   &kp W    &kp G     &kp J   &kp TAB   &kp DEL   &layer_td &kp LGUI &kp RCTRL  &kp RSHFT  &kp P    &kp H   &kp COMMA &kp DOT  &kp FSLH &kp PG_UP
-        &mo MAGIC &kp HOME &kp END &kp LEFT &kp RIGHT         &kp SPACE &kp BSPC  &kp LALT  &kp RALT &kp DE_DOT &kp RET             &kp UP  &kp DOWN  &kp LBKT &kp RBKT &kp PG_DN
+        repeat    shft_S   &kp T   &kp R    &kp D     &kp DE_Y                                                             &kp B    &kp N   &kp E     &kp I    &kp A    &key_repeat
+        &kp GRAVE &kp DE_Z &none   &kp W    &kp G     &kp J   &kp TAB   &kp DEL   &layer_td  &kp LGUI &kp RCTRL  &kp RSHFT  &kp P    &kp H   &kp COMMA &kp DOT  &kp FSLH &kp PG_UP
+        &mo MAGIC &kp HOME &kp END &kp LEFT &kp RIGHT         &kp SPACE &kp BSPC  &kp MDE_AT &kp RALT &kp DE_DOT &kp RET             &kp UP  &kp DOWN  &kp LBKT &kp RBKT &kp PG_DN
       >;
     };
 
