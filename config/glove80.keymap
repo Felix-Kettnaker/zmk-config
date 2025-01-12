@@ -153,8 +153,8 @@ bindings = <&macro_tap &ht RALT DE_DOT>;
         &kp EQUAL &kp N1   &kp N2  &kp N3   &kp N4    &kp N5                                                               &kp N6   &kp N7  &kp N8    &kp N9   &kp N0   &kp MINUS
         &kp TAB   &kp V    &kp M   &kp L    &kp C     &kp K                                                                &kp DE_X &kp F   &kp O     &kp U    &kp Q    &kp BSLH
         &rept     &shft_S  &kp T   &kp R    &kp D     &kp DE_Y                                                             &kp B    &kp N   &kp E     &kp I    &shft_A  &rept
-        &kp ESC   &ctrl_z  &none   &kp W    &kp G     &kp J   &kp TAB   &kp DEL   &layer_td  &kp LGUI &kp RCTRL &kp DE_SQT &kp P    &kp H   &kp COMMA &kp DOT  &ctrl_com &ht PG_UP
-        &mo MAGIC &kp HOME &kp END &kp LEFT &kp RIGHT         &cmd_spc  &opt_bspc &kp MDE_AT &kp RALT &opt_dot   &cmd_ret  &kp UP   &kp DOWN &kp LBKT &kp RBKT &kp PG_DN
+        &kp ESC   &kp Z    &none   &kp W    &kp G     &kp J   &kp TAB   &kp DEL   &layer_td  &kp LGUI &kp RCTRL &kp DE_SQT &kp P    &kp H   &kp COMMA &kp DOT  &kp DE_COMM &ht PG_UP
+        &mo MAGIC &kp HOME &kp END &kp LEFT &kp RIGHT         &cmd_spc  &kp BSPC  &kp MDE_AT &kp RALT &kp DE_DOT  &cmd_ret  &kp UP   &kp DOWN &kp LBKT &kp RBKT &kp PG_DN
       >;
     };
 
