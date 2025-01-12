@@ -43,51 +43,53 @@
   macros {
     rept: rept {
       compatible = "zmk,behavior-macro";
-      #binding-cells = <0>; 
+      #binding-cells = <0>;
       bindings = <&macro_tap &key_repeat>;
     };
 
     // hold-tap
-    shft_S: left_shift_S {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &ht LSHFT S>;
-    };
-    shft_A: right_shift_A {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &ht RSHFT A>;
-    };
-    cmd_spc: left_cmd_space {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &ht LCMD SPACE>;
-    };
-    cmd_ret: right_cmd_return {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &ht RCMD RET>;
-    };
-    ctrl_z: left_ctrl_z {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &ht LCTRL DE_Z>;
-    };
-    ctrl_com: right_ctrl_com {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &ht RCTRL DE_COMM>;
-    };
-    opt_bspc: left_opt_bspc {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &ht LALT BSPC>;
-    };
-    opt_dot: right_opt_dot {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &ht RALT DE_DOT>;
-    };
+    /*
+shft_S: left_shift_S {
+compatible = "zmk,behavior-macro";
+#binding-cells = <0>;
+bindings = <&macro_tap &ht LSHFT S>;
+};
+shft_A: right_shift_A {
+compatible = "zmk,behavior-macro";
+#binding-cells = <0>;
+bindings = <&macro_tap &ht RSHFT A>;
+};
+cmd_spc: left_cmd_space {
+compatible = "zmk,behavior-macro";
+#binding-cells = <0>;
+bindings = <&macro_tap &ht LCMD SPACE>;
+};
+cmd_ret: right_cmd_return {
+compatible = "zmk,behavior-macro";
+#binding-cells = <0>;
+bindings = <&macro_tap &ht RCMD RET>;
+};
+ctrl_z: left_ctrl_z {
+compatible = "zmk,behavior-macro";
+#binding-cells = <0>;
+bindings = <&macro_tap &ht LCTRL DE_Z>;
+};
+ctrl_com: right_ctrl_com {
+compatible = "zmk,behavior-macro";
+#binding-cells = <0>;
+bindings = <&macro_tap &ht RCTRL DE_COMM>;
+};
+opt_bspc: left_opt_bspc {
+compatible = "zmk,behavior-macro";
+#binding-cells = <0>;
+bindings = <&macro_tap &ht LALT BSPC>;
+};
+opt_dot: right_opt_dot {
+compatible = "zmk,behavior-macro";
+#binding-cells = <0>;
+bindings = <&macro_tap &ht RALT DE_DOT>;
+};
+*/
 
 
     bt_0: bt_profile_macro_0 {
