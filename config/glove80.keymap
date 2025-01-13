@@ -41,55 +41,51 @@
   };
 
   macros {
-    rept: rept {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &key_repeat>;
-    };
+    ZMK_MACRO(rept, bindings = <&macro_tap &key_repeat>;);
 
     // hold-tap
-shft_S: left_shift_S {
-compatible = "zmk,behavior-macro";
-#binding-cells = <0>;
-bindings = <&macro_tap &ht LSHFT S>;
-};
-shft_A: right_shift_A {
-compatible = "zmk,behavior-macro";
-#binding-cells = <0>;
-bindings = <&macro_tap &ht RSHFT A>;
-};
-cmd_spc: left_cmd_space {
-compatible = "zmk,behavior-macro";
-#binding-cells = <0>;
-bindings = <&macro_tap &ht LCMD SPACE>;
-};
-cmd_ret: right_cmd_return {
-compatible = "zmk,behavior-macro";
-#binding-cells = <0>;
-bindings = <&macro_tap &ht RCMD RET>;
-};
+    LShtf: left_shift_HT {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <1>;
+    bindings = <&macro_tap &ht LSHFT>, <&macro_param_1to1>;
+    };
     /*
-ctrl_z: left_ctrl_z {
-compatible = "zmk,behavior-macro";
-#binding-cells = <0>;
-bindings = <&macro_tap &ht LCTRL DE_Z>;
-};
-ctrl_com: right_ctrl_com {
-compatible = "zmk,behavior-macro";
-#binding-cells = <0>;
-bindings = <&macro_tap &ht RCTRL DE_COMM>;
-};
-opt_bspc: left_opt_bspc {
-compatible = "zmk,behavior-macro";
-#binding-cells = <0>;
-bindings = <&macro_tap &ht LALT BSPC>;
-};
-opt_dot: right_opt_dot {
-compatible = "zmk,behavior-macro";
-#binding-cells = <0>;
-bindings = <&macro_tap &ht RALT DE_DOT>;
-};
-*/
+    shft_A: right_shift_A {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_tap &ht RSHFT A>;
+    };
+    cmd_spc: left_cmd_space {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_tap &ht LCMD SPACE>;
+    };
+    cmd_ret: right_cmd_return {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_tap &ht RCMD RET>;
+    };
+    ctrl_z: left_ctrl_z {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_tap &ht LCTRL DE_Z>;
+    };
+    ctrl_com: right_ctrl_com {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_tap &ht RCTRL DE_COMM>;
+    };
+    opt_bspc: left_opt_bspc {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_tap &ht LALT BSPC>;
+    };
+    opt_dot: right_opt_dot {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_tap &ht RALT DE_DOT>;
+    };
+    */
 
 
     bt_0: bt_profile_macro_0 {
@@ -152,9 +148,9 @@ bindings = <&macro_tap &ht RALT DE_DOT>;
         &kp F1    &kp F2   &kp F3  &kp F4   &kp F5                                                                                  &kp F6  &kp F7    &kp F8   &kp F9   &kp F10
         &kp EQUAL &kp N1   &kp N2  &kp N3   &kp N4    &kp N5                                                               &kp N6   &kp N7  &kp N8    &kp N9   &kp N0   &kp MINUS
         &kp TAB   &kp V    &kp M   &kp L    &kp C     &kp K                                                                &kp DE_X &kp F   &kp O     &kp U    &kp Q    &kp BSLH
-        &rept     &shft_S  &kp T   &kp R    &kp D     &kp DE_Y                                                             &kp B    &kp N   &kp E     &kp I    &shft_A  &rept
+        &rept     &LShft S &kp T   &kp R    &kp D     &kp DE_Y                                                             &kp B    &kp N   &kp E     &kp I    &LShft A &rept
         &kp ESC   &kp Z    &none   &kp W    &kp G     &kp J   &kp TAB   &kp DEL   &layer_td  &kp LGUI &kp RCTRL &kp DE_SQT &kp P    &kp H   &kp COMMA &kp DOT  &kp DE_COMM &ht PG_UP
-        &mo MAGIC &kp HOME &kp END &kp LEFT &kp RIGHT         &cmd_spc  &kp BSPC  &kp MDE_AT &kp RALT &kp DE_DOT  &cmd_ret  &kp UP   &kp DOWN &kp LBKT &kp RBKT &kp PG_DN
+        &mo MAGIC &kp HOME &kp END &kp LEFT &kp RIGHT         &SPACE   &kp BSPC  &kp MDE_AT &kp RALT &kp DE_DOT  &RET      &kp UP   &kp DOWN &kp LBKT &kp RBKT &kp PG_DN
       >;
     };
 
