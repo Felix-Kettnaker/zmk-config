@@ -41,7 +41,7 @@
   };
 
   macros {
-    ZMK_MACRO(rept, bindings = <&macro_tap &key_repeat>;);
+    ZMK_MACRO(rept, bindings = <&macro_tap &key_repeat>;)
 
     // hold-tap
     LShtf: left_shift_HT {
