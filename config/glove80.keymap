@@ -153,7 +153,7 @@
         &kp TAB   &kp V    &kp M   &kp L    &kp C     &kp K                                                                &kp DE_X &kp F   &kp O     &kp U    &kp Q    &kp BSLH
         &rept     &LShft S &kp T   &kp R    &kp D     &kp DE_Y                                                             &kp B    &kp N   &kp E     &kp I    &LShft A &rept
         &kp ESC   &kp Z    &none   &kp W    &kp G     &kp J   &kp TAB   &kp DEL   &layer_td  &kp LGUI &kp RCTRL &kp DE_SQT &kp P    &kp H   &kp COMMA &kp DOT  &kp DE_COMM &ht PG_UP
-        &mo MAGIC &kp HOME &kp END &kp LEFT &kp RIGHT         &SPACE   &kp BSPC  &kp MDE_AT &kp RALT &kp DE_DOT  &RET      &kp UP   &kp DOWN &kp LBKT &kp RBKT &kp PG_DN
+        &mo MAGIC &kp HOME &kp END &kp LEFT &kp RIGHT         &kp SPACE &kp BSPC  &kp MDE_AT &kp RALT &kp DE_DOT  &kp RET  &kp UP   &kp DOWN &kp LBKT &kp RBKT &kp PG_DN
       >;
     };
 
