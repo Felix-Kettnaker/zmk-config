@@ -17,17 +17,23 @@
 #define LOWER 1
 #define MAGIC 2
 
+// hold-tap behavior
+#define flvr "balanced"
+#define ttm 125
+#define qtm 150
+#define rpim 100
+
 / {
   behaviors {
     // hold-tab
     ht: hold_tap {
       compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <2>;
-      flavor = "balanced";
-      tapping-term-ms = <125>; // how long before tap becomes hold
-      quick-tap-ms = <150>; // double tapping within this time wil always be a tap (also when held)
-      require-prior-idle-ms = <100>; // when another key was pressed before this key, it will always be a tap
-      bindings = <&kp>, <&kp>;
+      #binding-cells = <0>;
+      flavor = flvr;
+      tapping-term-ms = ttm; // how long before tap becomes hold
+      quick-tap-ms = qtm; // double tapping within this time wil always be a tap (also when held)
+      require-prior-idle-ms = rpim; // when another key was pressed before this key, it will always be a tap
+      bindings = <&kp LSHFT>, <&kp S>;
     };
 
     // For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.
@@ -47,12 +53,12 @@
       bindings = <&macro_tap &key_repeat>;
     };
     // hold-tap
+    /*
     LShft: left_shift_HT {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
     bindings = <&macro_tap &ht LSHFT A>;
     };
-    /*
     shft_A: right_shift_A {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
@@ -151,7 +157,7 @@
         &kp F1    &kp F2   &kp F3  &kp F4   &kp F5                                                                                  &kp F6  &kp F7    &kp F8   &kp F9   &kp F10
         &kp EQUAL &kp N1   &kp N2  &kp N3   &kp N4    &kp N5                                                               &kp N6   &kp N7  &kp N8    &kp N9   &kp N0   &kp MINUS
         &kp TAB   &kp V    &kp M   &kp L    &kp C     &kp K                                                                &kp DE_X &kp F   &kp O     &kp U    &kp Q    &kp BSLH
-        &rept     &LShft  &kp T   &kp R    &kp D     &kp DE_Y                                                             &kp B    &kp N   &kp E     &kp I    &LShft  &rept
+        &rept     &ht  &kp T   &kp R    &kp D     &kp DE_Y                                                             &kp B    &kp N   &kp E     &kp I    &ht     &rept
         &kp ESC   &kp Z    &none   &kp W    &kp G     &kp J   &kp TAB   &kp DEL   &layer_td  &kp LGUI &kp RCTRL &kp DE_SQT &kp P    &kp H   &kp COMMA &kp DOT  &kp DE_COMM &ht PG_UP
         &mo MAGIC &kp HOME &kp END &kp LEFT &kp RIGHT         &kp SPACE &kp BSPC  &kp MDE_AT &kp RALT &kp DE_DOT  &kp RET  &kp UP   &kp DOWN &kp LBKT &kp RBKT &kp PG_DN
       >;
