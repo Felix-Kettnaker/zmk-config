@@ -30,9 +30,9 @@
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <0>;
       flavor = flvr;
-      tapping-term-ms = <ttm>; // how long before tap becomes hold
-      quick-tap-ms = <qtm>; // double tapping within this time wil always be a tap (also when held)
-      require-prior-idle-ms = <rpim>; // when another key was pressed before this key, it will always be a tap
+      tapping-term-ms = <124>; // how long before tap becomes hold
+      quick-tap-ms = <150>; // double tapping within this time wil always be a tap (also when held)
+      require-prior-idle-ms = <100>; // when another key was pressed before this key, it will always be a tap
       bindings = <&kp LSHFT>, <&kp S>;
     };
 
