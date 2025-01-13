@@ -48,9 +48,9 @@
     };
     // hold-tap
     LShft: left_shift_HT {
-    compatible = "zmk,behavior-macro-one-param";
-    #binding-cells = <1>;
-    bindings = <&macro_tap &ht LSHFT>, <&macro_param_1to1>;
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&macro_tap &ht LSHFT A>;
     };
     /*
     shft_A: right_shift_A {
@@ -151,7 +151,7 @@
         &kp F1    &kp F2   &kp F3  &kp F4   &kp F5                                                                                  &kp F6  &kp F7    &kp F8   &kp F9   &kp F10
         &kp EQUAL &kp N1   &kp N2  &kp N3   &kp N4    &kp N5                                                               &kp N6   &kp N7  &kp N8    &kp N9   &kp N0   &kp MINUS
         &kp TAB   &kp V    &kp M   &kp L    &kp C     &kp K                                                                &kp DE_X &kp F   &kp O     &kp U    &kp Q    &kp BSLH
-        &rept     &LShft S &kp T   &kp R    &kp D     &kp DE_Y                                                             &kp B    &kp N   &kp E     &kp I    &LShft A &rept
+        &rept     &LShft  &kp T   &kp R    &kp D     &kp DE_Y                                                             &kp B    &kp N   &kp E     &kp I    &LShft  &rept
         &kp ESC   &kp Z    &none   &kp W    &kp G     &kp J   &kp TAB   &kp DEL   &layer_td  &kp LGUI &kp RCTRL &kp DE_SQT &kp P    &kp H   &kp COMMA &kp DOT  &kp DE_COMM &ht PG_UP
         &mo MAGIC &kp HOME &kp END &kp LEFT &kp RIGHT         &kp SPACE &kp BSPC  &kp MDE_AT &kp RALT &kp DE_DOT  &kp RET  &kp UP   &kp DOWN &kp LBKT &kp RBKT &kp PG_DN
       >;
