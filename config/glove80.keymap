@@ -47,7 +47,7 @@
       bindings = <&macro_tap &key_repeat>;
     };
     // hold-tap
-    LShtf: left_shift_HT {
+    LShft: left_shift_HT {
     compatible = "zmk,behavior-macro";
     #binding-cells = <1>;
     bindings = <&macro_tap &ht LSHFT>, <&macro_param_1to1>;
