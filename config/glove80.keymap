@@ -41,8 +41,11 @@
   };
 
   macros {
-    ZMK_MACRO(rept, bindings = <&macro_tap &key_repeat>;)
-
+    rept: repeatkey {
+      compativble = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_tap &key_repeat>;
+    };
     // hold-tap
     LShtf: left_shift_HT {
     compatible = "zmk,behavior-macro";
