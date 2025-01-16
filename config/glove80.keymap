@@ -13,6 +13,19 @@
  * edit it directly.
  */
 
+
+behaviors {
+    ctx_a: context_a {
+        compatible = "zmk,behavior-antecedent-morph";
+        label = "CONTEXT_SENSITIVE_KEY_A";
+        #binding-cells = <0>;
+        defaults = <&none>;
+        bindings = <&kp U>, <&kp O>;
+        antecedents = <Q Z>;
+        max-delay-ms = <1000>;
+    };
+};
+
 #include <behaviors.dtsi>
 /* Include all behavior includes needed */
 #include <dt-bindings/zmk/outputs.h>
