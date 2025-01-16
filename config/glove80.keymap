@@ -273,8 +273,8 @@ behaviors {
         label = "CONTEXT_SENSITIVE_KEY_A";
         #binding-cells = <0>;
         defaults = <&none>;
-        bindings = <&kp U>, <&kp O>;
         antecedents = <Q Z>;
+        bindings = <&kp U &kp O>;
         max-delay-ms = <1000>;
     };
 };
