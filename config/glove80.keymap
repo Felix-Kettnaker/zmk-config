@@ -282,8 +282,8 @@
             label = "CONTEXT_SENSITIVE_KEY_B";
             #binding-cells = <0>;
             defaults = <&none>;
-            antecedents = <     S     Z     V     R     L     W     D     G     C     Y     K     J     X     B     P     N     F    >;
-            bindings    = < &kp V &kp V &kp Z &kp W &kp W &kp L &kp C &kp C &kp G &kp J &kp J &kp K &kp B &kp X &kp B &kp H &kp H &kp>;
+            antecedents = <     S     Z     V     R     L     W     D     G     C     Y     K     J     X     B     P     N     F     H>;
+            bindings    = < &kp V &kp V &kp Z &kp W &kp W &kp L &kp C &kp C &kp G &kp J &kp J &kp K &kp B &kp X &kp B &kp H &kp H &kp F>;
             max-delay-ms = <1000>;
         };
    };
