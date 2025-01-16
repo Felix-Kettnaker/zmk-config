@@ -13,7 +13,6 @@
  * edit it directly.
  */
 
-
 #include <behaviors.dtsi>
 /* Include all behavior includes needed */
 #include <dt-bindings/zmk/outputs.h>
@@ -268,7 +267,17 @@
 
 /* Custom Defined Behaviors */
 / {
-
+behaviors {
+    ctx_a: context_a {
+        compatible = "zmk,behavior-antecedent-morph";
+        label = "CONTEXT_SENSITIVE_KEY_A";
+        #binding-cells = <0>;
+        defaults = <&none>;
+        bindings = <&kp U>, <&kp O>;
+        antecedents = <Q Z>;
+        max-delay-ms = <1000>;
+    };
+};
 };
 
 /* Automatically generated macro definitions */
@@ -356,7 +365,7 @@
                &kp F1    &kp MINUS   &none  &kp TAB   &none   &none                                                                                      &none  &kp SQT  &kp SEMI    &kp LBKT        &kp MINUS      &kp F12
            &caps_word        &kp V   &kp M    &kp L   &kp C   &kp K                                                                                      &kp X    &kp F     &kp O       &kp U            &kp Q        &none
           &key_repeat  &ht LSHFT S   &kp T    &kp R   &kp D   &kp Z                                                                                      &kp B    &kp N     &kp E       &kp I      &ht RSHFT A  &key_repeat
-              &kp ESC  &ht LCTRL Y   &none    &kp W   &kp G   &kp J  &ht LGUI TAB  &ht LALT DEL      &mo 4      &none      &kp LALT  &ht RGUI RS(BSLH)   &kp P    &kp H  &kp FSLH       &none  &ht RCTRL COMMA        &none
+              &kp ESC  &ht LCTRL Y   &ctx_a   &kp W   &kp G   &kp J  &ht LGUI TAB  &ht LALT DEL      &mo 4      &none      &kp LALT  &ht RGUI RS(BSLH)   &kp P    &kp H  &kp FSLH       &none  &ht RCTRL COMMA        &none
  &magic LAYER_Magic 0        &none   &none    &none   &none           &lt 3 SPACE    &lt 1 BSPC  &kp GLOBE  &kp GLOBE  &ht RGUI DOT          &lt 2 RET            &none  &kp RBKT  &kp RS(N7)            &none        &none
             >;
         };
