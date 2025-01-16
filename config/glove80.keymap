@@ -267,17 +267,26 @@
 
 /* Custom Defined Behaviors */
 / {
-behaviors {
-    ctx_a: context_a {
-        compatible = "zmk,behavior-antecedent-morph";
-        label = "CONTEXT_SENSITIVE_KEY_A";
-        #binding-cells = <0>;
-        defaults = <&none>;
-        antecedents = <Q Z>;
-        bindings = <&kp U &kp O>;
-        max-delay-ms = <1000>;
-    };
-};
+    behaviors {
+        ctx_a: context_a {
+            compatible = "zmk,behavior-antecedent-morph";
+            label = "CONTEXT_SENSITIVE_KEY_A";
+            #binding-cells = <0>;
+            defaults = <&kp GLOBE>;
+            antecedents = <     S     Z     V     T     M     R     L     W     D     G     C     Y     K     J     X     B     P     N     F     H     E     O     I     U     A     Q >;
+            bindings    = < &kp Z &kp S &kp S &kp M &kp T &kp L &kp R &kp R &kp G &kp D &kp D &kp K &kp Y &kp Y &kp P &kp H &kp F &kp F &kp N &kp N &kp O &kp E &kp U &kp I &kp Q &kp A >;
+            max-delay-ms = <1000>;
+        };
+        ctx_b: context_b {
+            compatible = "zmk,behavior-antecedent-morph";
+            label = "CONTEXT_SENSITIVE_KEY_B";
+            #binding-cells = <0>;
+            defaults = <&none>;
+            antecedents = <     S     Z     V     R     L     W     D     G     C     Y     K     J     X     B     P     N     F    >;
+            bindings    = < &kp V &kp V &kp Z &kp W &kp W &kp L &kp C &kp C &kp G &kp J &kp J &kp K &kp B &kp X &kp B &kp H &kp H &kp>;
+            max-delay-ms = <1000>;
+        };
+   };
 };
 
 /* Automatically generated macro definitions */
@@ -361,12 +370,12 @@ behaviors {
 
         layer_Base {
             bindings = <
-               &kp F2       &kp F3  &kp F4   &kp F5  &kp F6                                                                                                      &kp F7    &kp F8      &kp F9          &kp F10      &kp F11
-               &kp F1    &kp MINUS   &none  &kp TAB   &none   &none                                                                                      &none  &kp SQT  &kp SEMI    &kp LBKT        &kp MINUS      &kp F12
-           &caps_word        &kp V   &kp M    &kp L   &kp C   &kp K                                                                                      &kp X    &kp F     &kp O       &kp U            &kp Q        &none
-          &key_repeat  &ht LSHFT S   &kp T    &kp R   &kp D   &kp Z                                                                                      &kp B    &kp N     &kp E       &kp I      &ht RSHFT A  &key_repeat
-              &kp ESC  &ht LCTRL Y   &ctx_a   &kp W   &kp G   &kp J  &ht LGUI TAB  &ht LALT DEL      &mo 4      &none      &kp LALT  &ht RGUI RS(BSLH)   &kp P    &kp H  &kp FSLH       &none  &ht RCTRL COMMA        &none
- &magic LAYER_Magic 0        &none   &none    &none   &none           &lt 3 SPACE    &lt 1 BSPC  &kp GLOBE  &kp GLOBE  &ht RGUI DOT          &lt 2 RET            &none  &kp RBKT  &kp RS(N7)            &none        &none
+               &kp F2       &kp F3  &kp F4   &kp F5  &kp F6                                                                                                         &kp F7    &kp F8    &kp F9          &kp F10      &kp F11
+               &kp F1    &kp MINUS   &none  &kp TAB   &none   &none                                                                                      &none     &kp SQT  &kp SEMI  &kp LBKT        &kp MINUS      &kp F12
+           &caps_word        &kp V   &kp M    &kp L   &kp C   &kp K                                                                                      &kp X       &kp F     &kp O     &kp U            &kp Q        &none
+          &key_repeat  &ht LSHFT S   &kp T    &kp R   &kp D   &kp Z                                                                                      &kp B       &kp N     &kp E     &kp I      &ht RSHFT A  &key_repeat
+              &kp ESC  &ht LCTRL Y  &ctx_a    &kp W   &kp G   &kp J  &ht LGUI TAB  &ht LALT DEL      &mo 4      &none      &kp LALT  &ht RGUI RS(BSLH)   &kp P       &kp H  &kp FSLH    &ctx_a  &ht RCTRL COMMA        &none
+ &magic LAYER_Magic 0        &none  &ctx_b    &none   &none           &lt 3 SPACE    &lt 1 BSPC  &kp GLOBE  &kp GLOBE  &ht RGUI DOT          &lt 2 RET          &kp RS(N7)  &kp RBKT    &ctx_b            &none        &none
             >;
         };
 
