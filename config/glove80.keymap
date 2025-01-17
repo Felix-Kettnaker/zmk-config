@@ -360,7 +360,38 @@
 };
 
 /* Automatically generated combos definitions */
+/ {
+      combos {
+          compatible = "zmk,combos";
+                  // thumb + u = ü
+        combo_umlaut_udia {
+            key-positions = <74 31>;
+            bindings = <&kp LBKT>;
+            layers = <0>;
+        };
 
+        // thumb + O = Ö 
+        combo_umlaut_odia {
+            key-positions = <30 74>;
+            bindings = <&kp SEMI>;
+            layers = <0>;
+        };
+
+        // thumb + a = ä
+        combo_umlaut_adia {
+            key-positions = <74 44>;
+            bindings = <&kp SQT>;
+            layers = <0>;
+        };
+
+        // thumb + s = ß
+        combo_umlaut_sz {
+            key-positions = <35 69>;
+            bindings = <&kp MINUS>;
+            layers = <0>;
+        };
+      };
+    };
 
 /* Automatically generated keymap */
 / {
@@ -383,7 +414,7 @@
             bindings = <
  &kp F14          &kp F15    &kp F16    &kp F17    &kp F18                                                                                       &kp F19  &kp F20       &kp F21     &kp F22  &kp F23
  &kp F13            &none  &kp LG(H)  &kp LG(N)  &kp LG(O)  &kp LG(P)                                                             &none            &kp X    &kp Z         &kp Y  &kp RS(N4)  &kp F24
-   &none            &none  &kp LG(Q)  &kp LG(W)      &none      &none                                                        &kp RS(N5)           &kp N7   &kp N8        &kp N9   &kp RA(E)    &none
+   &none            &none  &kp LG(Q)  &kp LG(W)  &kp LG(E)      &none                                                        &kp RS(N5)           &kp N7   &kp N8        &kp N9   &kp RA(E)    &none
   &trans        &kp LSHFT  &kp LG(A)  &kp LG(S)  &kp LG(D)  &kp LG(F)                                                          &kp RBKT           &kp N4   &kp N5        &kp N6     &kp DOT   &trans
   &trans  &ht LCTRL LG(Z)  &kp LG(Y)  &kp LG(X)  &kp LG(C)  &kp LG(V)   &none   &none   &none   &none  &ht LALT TAB  &trans    &kp FSLH           &kp N1   &kp N2        &kp N3   &kp COMMA    &none
    &none          &kp DEL    &kp TAB   &kp BSPC  &kp SPACE              &none   &none   &none  &trans        &trans  &trans              &kp KP_MULTIPLY   &kp N0  &kp KP_SLASH       &none    &none
