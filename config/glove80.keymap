@@ -339,7 +339,7 @@
         ht: ht {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
             bindings = <&kp>, <&kp>;
             flavor = "balanced";
             quick-tap-ms = <150>;
@@ -401,12 +401,12 @@
 
         layer_Base {
             bindings = <
-               &kp F2       &kp F3  &kp F4   &kp F5  &kp F6                                                                                                         &kp F7    &kp F8    &kp F9          &kp F10      &kp F11
-               &kp F1    &kp MINUS   &none  &kp TAB   &none   &none                                                                                      &none     &kp SQT  &kp SEMI  &kp LBKT        &kp MINUS      &kp F12
-           &caps_word        &kp V   &kp M    &kp L   &kp C   &kp K                                                                                      &kp X       &kp F     &kp O     &kp U            &kp Q        &none
-          &key_repeat  &ht LSHFT S   &kp T    &kp R   &kp D   &kp Z                                                                                      &kp B       &kp N     &kp E     &kp I      &ht RSHFT A  &key_repeat
-              &kp ESC  &ht LCTRL Y  &ctx_a    &kp W   &kp G   &kp J  &ht LGUI TAB  &ht LALT DEL      &mo 4      &none      &kp LALT  &ht RGUI RS(BSLH)   &kp P       &kp H  &kp FSLH    &ctx_a  &ht RCTRL COMMA        &none
- &magic LAYER_Magic 0        &none  &ctx_b    &none   &none           &lt 3 SPACE    &lt 1 BSPC  &kp GLOBE  &kp GLOBE  &ht RGUI DOT          &lt 2 RET          &kp RS(N7)  &kp RBKT    &ctx_b            &none        &none
+               &kp F2       &kp F3  &kp F4    &kp F5     &kp F6                                                                                                         &kp F7    &kp F8    &kp F9          &kp F10      &kp F11
+               &kp F1    &kp MINUS   &none   &kp TAB      &none   &none                                                                                      &none     &kp SQT  &kp SEMI  &kp LBKT        &kp MINUS      &kp F12
+           &caps_word        &kp V   &kp M     &kp L      &kp C   &kp K                                                                                      &kp X       &kp F     &kp O     &kp U            &kp Q        &none
+          &key_repeat  &ht LSHFT S   &kp T     &kp R      &kp D   &kp Z                                                                                      &kp B       &kp N     &kp E     &kp I      &ht RSHFT A  &key_repeat
+              &kp ESC  &ht LCTRL Y  &ctx_a     &kp W      &kp G   &kp J  &ht LGUI TAB  &ht LALT DEL      &mo 4      &none      &kp LALT  &ht RGUI RS(BSLH)   &kp P       &kp H  &kp FSLH    &ctx_a  &ht RCTRL COMMA        &none
+ &magic LAYER_Magic 0        &none  &ctx_b  &kp BSPC  &kp SPACE           &lt 3 SPACE    &lt 1 BSPC  &kp GLOBE  &kp GLOBE  &ht RGUI DOT          &lt 2 RET          &kp RS(N7)  &kp RBKT    &ctx_b            &none        &none
             >;
         };
 
@@ -428,18 +428,18 @@
   &none      &none   &none   &none   &none   &none                                                    &none  &kp K_FORWARD    &kp RET  &kp K_BACK      &none   &none
  &trans  &kp LSHFT   &none   &none   &none   &none                                                  &kp RET       &kp LEFT   &kp DOWN      &kp UP  &kp RIGHT  &trans
  &trans  &kp LCTRL   &none   &none   &none   &none  &trans  &trans   &none   &none   &none   &none    &none       &kp HOME  &kp PG_DN   &kp PG_UP    &kp END   &none
-  &none      &none   &none   &none   &none          &trans  &trans  &trans   &none   &none   &none                   &none      &none       &none      &none   &none
+  &none      &none   &none  &trans  &trans          &trans  &trans  &trans   &none   &none   &none                   &none      &none       &none      &none   &none
             >;
         };
 
         layer_Symbols {
             bindings = <
- &kp F14                              &kp F15              &kp F16     &kp F17     &kp F18                                                                                                   &kp F19       &kp F20        &kp F21               &kp F22  &kp F23
- &kp F13                                &none  &kp LS(NON_US_BSLH)  &kp LS(N6)  &kp LS(N3)         &fwtck                                                                        &none     &kp EQUAL     &kp GRAVE  &kp RS(EQUAL)                 &none  &kp F24
-   &none                                &none           &kp LS(N8)  &kp LS(N9)  &kp LS(N2)   &kp LS(BSLH)                                                                      &bcktck  &kp RS(FSLH)      &kp RBKT       &kp FSLH                 &none    &none
-  &trans  &shft_tilde LSHFT MACRO_PLACEHOLDER            &kp GRAVE    &kp FSLH  &kp LS(N0)  &kp LS(GRAVE)                                                                &kp RS(COMMA)    &kp RS(N0)   &kp RS(DOT)     &kp RS(N1)       &ht RSHFT RA(L)   &trans
-  &trans                     &ht LCTRL LA(N7)        &kp LS(MINUS)    &kp BSLH  &kp LA(N8)     &kp LA(N9)   &none   &none   &none   &none  &ht LALT TAB  &ht RGUI SPACE     &kp RA(N6)    &kp RA(N5)  &kp RS(RBKT)     &kp RS(N7)  &ht RCTRL RS(RA(N7))    &none
-   &none                              &kp DEL              &kp TAB    &kp BSPC   &kp SPACE                  &none   &none   &none  &trans        &trans          &trans                      &circum    &kp RS(N5)     &kp RS(N4)             &kp SPACE    &none
+ &kp F14                              &kp F15              &kp F16     &kp F17     &kp F18                                                                                                     &kp F19       &kp F20        &kp F21               &kp F22  &kp F23
+ &kp F13                                &none  &kp LS(NON_US_BSLH)  &kp LS(N6)  &kp LS(N3)         &fwtck                                                                          &none     &kp EQUAL     &kp GRAVE  &kp RS(EQUAL)                 &none  &kp F24
+   &none                                &none           &kp LS(N8)  &kp LS(N9)  &kp LS(N2)   &kp LS(BSLH)                                                                        &bcktck  &kp RS(FSLH)      &kp RBKT       &kp FSLH                 &none    &none
+  &trans  &shft_tilde LSHFT MACRO_PLACEHOLDER            &kp GRAVE    &kp FSLH  &kp LS(N0)  &kp LS(GRAVE)                                                                  &kp RS(COMMA)    &kp RS(N0)   &kp RS(DOT)     &kp RS(N1)       &ht RSHFT RA(L)   &trans
+  &trans                     &ht LCTRL LA(N7)        &kp LS(MINUS)    &kp BSLH  &kp LA(N8)     &kp LA(N9)   &none   &none   &none   &none    &ht LALT TAB  &ht RGUI SPACE     &kp RA(N6)    &kp RA(N5)  &kp RS(RBKT)     &kp RS(N7)  &ht RCTRL RS(RA(N7))    &none
+   &none                              &kp DEL              &kp TAB    &kp BSPC      &trans                  &none   &none   &none  &trans  &ht RGUI SPACE          &trans                      &circum    &kp RS(N5)     &kp RS(N4)             &kp SPACE    &none
             >;
         };
 
